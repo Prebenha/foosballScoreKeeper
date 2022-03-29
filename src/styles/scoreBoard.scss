@@ -1,0 +1,21 @@
+$colors: #ff6161, #ffb835, #f5f56b, #30f069, rgb(51, 127, 240),
+  rgb(228, 99, 228);
+
+.scoreboard-table {
+  border-collapse: collapse;
+  width: 50%;
+  text-align: left;
+  th {
+    background-color: #152c46;
+    color: white;
+  }
+  @for $i from 1 through length($colors) {
+    tr:nth-child(#{length($colors)}n + #{$i}) {
+      background: nth($colors, $i);
+    }
+  }
+  td,
+  th {
+    padding: 5px 10px;
+  }
+}
