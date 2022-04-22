@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-
+import '../styles/components/newGame.scss'
 export const NewGame = () => {
     const [showForm, setShowForm] = useState(false)
     const [isTeam1Full, setIsTeam1Full] = useState(false)
@@ -44,9 +43,10 @@ export const NewGame = () => {
             <>
                 <h2>{gameMode}</h2>
                 <h3>Team 1</h3>
-                {data.map(user => <button onClick={() => { registerPlayer(1, user) }} disabled={isSelectedUser(user) || isTeam1Full} >{user}</button>)}
+                {data.map(user => <button className="user-button" onClick={() => { registerPlayer(1, user) }} disabled={isSelectedUser(user) || isTeam1Full} >{user}</button>)}
                 <h3>Team 2</h3>
-                {data.map(user => <button onClick={() => { registerPlayer(2, user) }} disabled={isSelectedUser(user) || isTeam2Full} >{user}</button>)}
+                {data.map(user => <button className="user-button" onClick={() => { registerPlayer(2, user) }} disabled={isSelectedUser(user) || isTeam2Full} >{user}</button>)}
+                <br />
                 {!!selectedTeam1.concat(selectedTeam2).length && <button onClick={clearSelection}>Clear selection</button>}
             </>
         )

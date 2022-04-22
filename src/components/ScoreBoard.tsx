@@ -1,6 +1,6 @@
 import React from "react";
 import { useTable, useSortBy } from "react-table";
-import '../styles/scoreBoard.scss'
+import '../styles/components/scoreBoard.scss'
 
 export const ScoreBoard = () => {
     const columns = React.useMemo(
